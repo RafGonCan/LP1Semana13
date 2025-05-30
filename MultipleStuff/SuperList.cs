@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MultipleStuff
 {
@@ -64,12 +62,40 @@ namespace MultipleStuff
             }
             return result;
         }
-        public void GetMinMax3()
+        public Tuple<double, double> GetMinMax3(ref double min, ref double max)
         {
+            min = numbers[0];
+            max = numbers[0];
+            foreach (var number in numbers)
+            {
+                if (number < min)
+                {
+                    min = number;
+                }
+                if (number > max)
+                {
+                    max = number;
+                }
+            }
+            return new Tuple<double, double>(min, max);
         }
 
-        public void GetMinMax4()
+        public (double,double) GetMinMax4(double min, double max)
         {
+            min = numbers[0];
+            max = numbers[0];
+            foreach (var number in numbers)
+            {
+                if (number < min)
+                {
+                    min = number;
+                }
+                if (number > max)
+                {
+                    max = number;
+                }
+            }
+            return (min, max);
         }
     }
 }
